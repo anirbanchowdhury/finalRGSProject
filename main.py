@@ -5,7 +5,7 @@ import i18n
 import locale
 from handleDBConnections import *
 
-i18n.load_path.append('/Users/aniamritapc/PycharmProjects/pythonProject7')
+i18n.load_path.append('.')
 
 """
 User interaction : If we already know the person from before : Has logged in  (Capture last login details) , 
@@ -16,7 +16,7 @@ Say "Hello <Firstname,Lastname>, welcome back " in their language of preference
     What do you need help with today ? You can type things like 
     /facebook
     or /... or /... 
-
+ 
 <Guest login> 
  .. Which language do you prefer ? (In multiple languages..)  
  .. capture the entry / take keyboard inputs 
@@ -39,6 +39,7 @@ def load_lang_pref(id):
     if lang_pref is None:
         # go to guest login
         print("Going to guest login")
+
     else:
         # Load lang file accordingly
         print("Going to existing login")
@@ -49,6 +50,7 @@ def load_lang_pref(id):
         elif lang_pref == 3:
             i18n.set('fallback', 'ml')
     return lang_pref
+
 
 def start_command(update, context):
     """
@@ -61,8 +63,8 @@ def start_command(update, context):
     last_name = update.message.chat.last_name
     # Get lang preference from DB
 
-    lang_pref = load_lang_pref(id)
-    #update.message.reply_text("Your language preference was {}", lang_pref )  # Hello world !
+    load_lang_pref(id)
+    # update.message.reply_text("Your language preference was {}", lang_pref )  # Hello world !
 
     print(i18n.t('translate.hi'))
     update.message.reply_text((i18n.t('translate.hi')))  # Hello world !
@@ -112,7 +114,6 @@ def main():
 
     updater.start_polling()
     updater.idle()
-
 
 
 def loadDict():
