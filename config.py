@@ -1,0 +1,6 @@
+BOT_TOKEN = "1750982866:AAEHfR4n0yk10SXCRTXhTWfR2Ue35-hjyuE"
+DB_HOST="localhost"
+DB_PORT="3306"
+DB_DATABASE="rgsbot"
+DB_USERNAME="testuser"
+DB_PASSWORD="testpass"

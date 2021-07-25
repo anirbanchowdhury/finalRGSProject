@@ -1,0 +1,16 @@
+create database rgsbot;
+use rgsbot;
+
+
+GRANT ALL PRIVILEGES ON rgsbot.* TO 'testuser'@'localhost';
+
+
+create table user_info (
+ id integer ,
+ lang_preference integer,
+ primary key (id, lang_preference)
+ );
+
+
+
+ show tables;

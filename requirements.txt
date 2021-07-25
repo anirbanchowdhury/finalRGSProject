@@ -1,0 +1,5 @@
+python-telegram-bot==13.5
+requests~=2.25.1
+python-i18n==0.3.9
+PyYAML==5.4.1
+mysql-connector-python==8.0.25
